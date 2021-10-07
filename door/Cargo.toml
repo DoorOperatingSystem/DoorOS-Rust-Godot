@@ -6,3 +6,4 @@ resolver = "2"
 
 [dependencies]
 bevy = "0.5"
+engine = {path = "../engine"}
