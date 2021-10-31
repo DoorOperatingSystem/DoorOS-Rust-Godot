@@ -14,23 +14,6 @@ pub mod spawn {
     use bevy::prelude::*;
     use crate::*;
 
-    pub fn taskbar(mut commands: Commands, colours: Res<Colours>, mut windows: ResMut<Windows>) {
-        let window = windows.get_primary_mut().unwrap();
-        let mut start_of_the_window: f32 = window.width() / 2.;
-        start_of_the_window = start_of_the_window - start_of_the_window;
-    
-        commands
-            .spawn_bundle(SpriteBundle {
-                material: colours.taskbar.clone(),
-                sprite: Sprite::new(Vec2::new(window.width(), window.height() / 15.)),
-                transform: Transform::from_translation(Vec3::new(
-                    start_of_the_window, 	
-                    -(window.height() / 2. - (window.height() / 15. - (window.height() / 30.))), 999.)),
-                ..Default::default()
-            })
-            .insert(TaskBar);
-    }
-
     pub fn background(mut commands: Commands, colours: Res<Colours>, mut windows: ResMut<Windows>) {
         let window = windows.get_primary_mut().unwrap();
         let mut start_of_the_window_width: f32 = window.width() / 2.;
@@ -49,5 +32,26 @@ pub mod spawn {
                 ..Default::default()
             })
             .insert(Background);
+    }
+
+    pub fn taskbar(mut commands: Commands, colours: Res<Colours>, mut windows: ResMut<Windows>) {
+        let window = windows.get_primary_mut().unwrap();
+        let mut start_of_the_window: f32 = window.width() / 2.;
+        start_of_the_window = start_of_the_window - start_of_the_window;
+    
+        commands
+            .spawn_bundle(SpriteBundle {
+                material: colours.taskbar.clone(),
+                sprite: Sprite::new(Vec2::new(window.width(), window.height() / 15.)),
+                transform: Transform::from_translation(Vec3::new(
+                    start_of_the_window, 	
+                    -(window.height() / 2. - (window.height() / 15. - (window.height() / 30.))), 999.)),
+                ..Default::default()
+            })
+            .insert(TaskBar);
+    }
+
+    pub fn menu_button(mut commands: Commands, colours: Res<Colours>, mut windows: ResMut<Windows>) {
+        
     }
 }

@@ -48,8 +48,9 @@ fn main() {
             ..Default::default()
         })
         .add_startup_system(setup.system())
-        .add_startup_stage(STAGES[0], SystemStage::single(engine::spawn::taskbar.system()))
-        .add_startup_system_to_stage("os main", engine::spawn::background.system())
+        .add_startup_stage(STAGES[0], SystemStage::single(engine::spawn::background.system()))
+        .add_startup_system_to_stage(STAGES[0], engine::spawn::taskbar.system())
+        //.add_startup_system_to_stage
         .add_system(process_loop.system())
         .add_plugins(DefaultPlugins)
         .run();

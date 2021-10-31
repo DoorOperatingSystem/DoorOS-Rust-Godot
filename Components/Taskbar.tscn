@@ -1,0 +1,27 @@
+[gd_scene format=2]
+
+[node name="Taskbar" type="Node2D"]
+
+[node name="Bar" type="Node" parent="."]
+
+[node name="Base" type="ColorRect" parent="Bar"]
+margin_left = -563.0
+margin_top = 261.0
+margin_right = 562.0
+margin_bottom = 308.0
+color = Color( 0.678431, 0.678431, 0.678431, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Outline" type="ColorRect" parent="Bar"]
+margin_left = -563.0
+margin_top = 261.0
+margin_right = 562.0
+margin_bottom = 266.0
+color = Color( 0.505882, 0.505882, 0.505882, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Border" type="Camera2D" parent="."]
